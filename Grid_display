@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Setting dir as working directory
 
-path = ""
+path = "covid19-radiography-database/COVID-19_Radiography_Dataset/COVID/"
 os.chdir(path)
 
 # Storing N images in array form to display
@@ -17,15 +17,15 @@ images = [cv2.imread(file) for file in sorted(os.listdir())[:10] ]
 
 # calculating grid dimensions
 column = 5
-row = math.ceil(len(files)/column)
+row = math.ceil(len(images)/column)
 
 
 # Displaying images in grid
 
 f,axarr = plt.subplots(row,column)
 for i in range(row):
-  for j in range(column):
-    axarr[i,j].imread(images[i+j])
+    for j in range(column):
+        axarr[i,j].imshow(images[i+j])
     
 plt.show()
 
