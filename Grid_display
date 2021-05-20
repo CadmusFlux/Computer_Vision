@@ -1,0 +1,31 @@
+# Libraries
+import os
+import math
+import cv2
+import matplotlib.pyplot as plt
+
+# Setting dir as working directory
+
+path = ""
+os.chdir(path)
+
+# Storing N images in array form to display
+
+n = 10
+images = []
+images = [cv2.imread(file) for file in sorted(os.listdir())[:10] ]
+
+# calculating grid dimensions
+column = 5
+row = math.ceil(len(files)/column)
+
+
+# Displaying images in grid
+
+f,axarr = plt.subplots(row,column)
+for i in range(row):
+  for j in range(column):
+    axarr[i,j].imread(images[i+j])
+    
+plt.show()
+
